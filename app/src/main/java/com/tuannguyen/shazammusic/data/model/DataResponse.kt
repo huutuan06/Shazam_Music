@@ -6,12 +6,12 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class DataResponse(
-    @SerializedName("songs")
+//    @SerializedName("songs")
     val songs: List<Song>?,
-    @SerializedName("artist")
+//    @SerializedName("artist")
     val artist: Artist?,
-    @SerializedName("hits")
+//    @SerializedName("hits")
     val hits: List<SearchResponse>?,
-    @SerializedName("songs")
+//    @SerializedName("songs")
     val song: Song?
 ): Parcelable

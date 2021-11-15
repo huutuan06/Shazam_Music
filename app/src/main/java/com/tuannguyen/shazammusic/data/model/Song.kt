@@ -19,5 +19,7 @@ data class Song(
     @SerializedName("song_art_image_thumbnail_url")
     val thumbnailUrl: String?,
     @SerializedName("song_art_image_url")
-    val ImageUrl: String?
+    val ImageUrl: String?,
+    @SerializedName("url")
+    val url: String?
 ): Parcelable

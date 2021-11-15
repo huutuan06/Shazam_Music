@@ -6,8 +6,6 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class SearchResponse(
-    @SerializedName("type")
     val type: String?,
-    @SerializedName("result")
-    val song: Song?
+    val result: Song?
 ): Parcelable

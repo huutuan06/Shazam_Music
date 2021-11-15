@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Shazam Music</string>
+    <string name="song_name">Song\'s Name</string>
+    <string name="artist_name">Artist\'s Name</string>
 </resources>

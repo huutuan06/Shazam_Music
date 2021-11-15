@@ -9,7 +9,11 @@ import javax.inject.Inject
 class SongRemoteRepositoryImpl @Inject constructor(
     private val songAPIService: SongAPIService
 ): SongRemoteRepository {
-    override suspend fun getRecommendedSongs(key: String, locale: String): Response<APIResponse> {
-        return songAPIService.getRecommendedSong(key, locale)
+    override suspend fun getRecommendedSongs(): Response<APIResponse> {
+        return songAPIService.getSongs()
+    }
+
+    override suspend fun getSearchedSongs(searchQuery: String): Response<APIResponse> {
+        return songAPIService.getSearchedSongs(searchQuery)
     }
 }

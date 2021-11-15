@@ -7,5 +7,17 @@
     <fragment
         android:id="@+id/songsFragment"
         android:name="com.tuannguyen.shazammusic.presentation.ui.SongsFragment"
-        android:label="SongsFragment" />
+        android:label="SongsFragment" >
+        <action
+            android:id="@+id/action_songsFragment_to_songInfoFragment"
+            app:destination="@id/songInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/songInfoFragment"
+        android:name="com.tuannguyen.shazammusic.presentation.ui.SongInfoFragment"
+        android:label="SongInfoFragment">
+        <argument
+            android:name="selected_song"
+            app:argType="com.tuannguyen.shazammusic.data.model.Song" />
+    </fragment>
 </navigation>

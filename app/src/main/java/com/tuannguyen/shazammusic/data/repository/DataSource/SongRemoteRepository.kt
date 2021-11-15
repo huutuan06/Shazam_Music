@@ -5,5 +5,6 @@ import retrofit2.Response
 
 interface SongRemoteRepository {
 
-    suspend fun getRecommendedSongs(key: String, locale: String): Response<APIResponse>
+    suspend fun getRecommendedSongs(): Response<APIResponse>
+    suspend fun getSearchedSongs(searchQuery: String): Response<APIResponse>
 }

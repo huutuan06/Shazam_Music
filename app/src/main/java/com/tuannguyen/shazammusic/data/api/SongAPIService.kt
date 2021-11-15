@@ -9,9 +9,16 @@ import retrofit2.http.Query
 interface SongAPIService {
 
     @Headers(
-        "x-rapidapi-host:shazam.p.rapidapi.com",
+        "x-rapidapi-host:genius.p.rapidapi.com",
         "x-rapidapi-key:9921b71bf3msh3576c6bf86857dcp116f59jsn02c90aceafc0"
     )
-    @GET("/songs/list-recommendations")
-    suspend fun getRecommendedSong(@Query("key") key: String, @Query("locale") locale: String): Response<APIResponse>
+    @GET("/artists/1/songs")
+    suspend fun getSongs(): Response<APIResponse>
+
+    @Headers(
+        "x-rapidapi-host:genius.p.rapidapi.com",
+        "x-rapidapi-key:9921b71bf3msh3576c6bf86857dcp116f59jsn02c90aceafc0"
+    )
+    @GET("/search")
+    suspend fun getSearchedSongs(@Query("q") searchQuery: String): Response<APIResponse>
 }
