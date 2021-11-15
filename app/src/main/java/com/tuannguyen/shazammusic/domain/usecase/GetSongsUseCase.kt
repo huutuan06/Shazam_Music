@@ -5,7 +5,7 @@ import com.tuannguyen.shazammusic.domain.repository.SongRepository
 import retrofit2.Response
 import javax.inject.Inject
 
-class GetRecommendedSongsUseCase @Inject constructor(
+class GetSongsUseCase @Inject constructor(
     private val songRepository: SongRepository
 ){
     suspend fun execute(key: String, locale: String): Response<APIResponse> {

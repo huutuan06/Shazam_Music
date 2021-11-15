@@ -6,16 +6,18 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Artist(
-    @SerializedName("avatar")
-    val avatar: String?,
     @SerializedName("id")
     val id: String?,
     @SerializedName("name")
     val name: String?,
-    @SerializedName("verified")
-    val verified: Boolean? = false,
-    @SerializedName("weburl")
-    val webUrl: String?,
-    @SerializedName("adamid")
-    val adamId: String?
+    @SerializedName("header_image_url")
+    val headerImageUrl: String?,
+    @SerializedName("image_url")
+    val imageUrl: String?,
+    @SerializedName("facebook_name")
+    val facebookName: String?,
+    @SerializedName("instagram_name")
+    val instagramName: String?,
+    @SerializedName("url")
+    val url: String?
 ): Parcelable

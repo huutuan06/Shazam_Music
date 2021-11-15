@@ -5,17 +5,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.tuannguyen.shazammusic.data.model.SongInfo
+import com.tuannguyen.shazammusic.data.model.Song
 import com.tuannguyen.shazammusic.databinding.ItemSongBinding
 
 class SongsAdapter: RecyclerView.Adapter<SongsAdapter.SongViewHolder>() {
 
-    val callback = object : DiffUtil.ItemCallback<SongInfo>() {
-        override fun areItemsTheSame(oldItem: SongInfo, newItem: SongInfo): Boolean {
+    val callback = object : DiffUtil.ItemCallback<Song>() {
+        override fun areItemsTheSame(oldItem: Song, newItem: Song): Boolean {
             return oldItem.key == newItem.key
         }
 
-        override fun areContentsTheSame(oldItem: SongInfo, newItem: SongInfo): Boolean {
+        override fun areContentsTheSame(oldItem: Song, newItem: Song): Boolean {
             return oldItem == newItem
         }
     }
@@ -40,7 +40,7 @@ class SongsAdapter: RecyclerView.Adapter<SongsAdapter.SongViewHolder>() {
     inner class SongViewHolder(
         private val binding: ItemSongBinding
     ): RecyclerView.ViewHolder(binding.root) {
-        fun bind(song: SongInfo) {
+        fun bind(song: Song) {
             binding.songTitle.text = song.title
         }
     }

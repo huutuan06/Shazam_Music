@@ -5,9 +5,9 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class APIResponse(
-    @SerializedName("meta")
-    val meta: Meta?,
-    @SerializedName("response")
-    val response: DataResponse?,
+data class SearchResponse(
+    @SerializedName("type")
+    val type: String?,
+    @SerializedName("result")
+    val song: Song?
 ): Parcelable
