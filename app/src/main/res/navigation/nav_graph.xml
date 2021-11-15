@@ -20,4 +20,8 @@
             android:name="selected_song"
             app:argType="com.tuannguyen.shazammusic.data.model.Song" />
     </fragment>
+    <fragment
+        android:id="@+id/savedSongFragment"
+        android:name="com.tuannguyen.shazammusic.presentation.ui.SavedSongFragment"
+        android:label="SavedSongFragment" />
 </navigation>

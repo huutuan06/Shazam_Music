@@ -3,11 +3,14 @@ package com.tuannguyen.shazammusic.presentation.ui
 import android.webkit.WebViewClient
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.snackbar.Snackbar
 import com.tuannguyen.shazammusic.R
 import com.tuannguyen.shazammusic.databinding.FragmentSongInfoBinding
 import com.tuannguyen.shazammusic.presentation.base.BaseFragment
 import com.tuannguyen.shazammusic.presentation.viewmodel.SongInfoViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SongInfoFragment: BaseFragment<FragmentSongInfoBinding, SongInfoViewModel>() {
 
     private val viewModel: SongInfoViewModel by viewModels()
@@ -32,6 +35,11 @@ class SongInfoFragment: BaseFragment<FragmentSongInfoBinding, SongInfoViewModel>
                     loadUrl(it.url)
                 }
             }
+        }
+
+        binding.floatButton.setOnClickListener {
+            viewModel.saveSongToDB(song)
+            Snackbar.make(requireView(),"Saved Successfully!", Snackbar.LENGTH_LONG).show()
         }
     }
 }
