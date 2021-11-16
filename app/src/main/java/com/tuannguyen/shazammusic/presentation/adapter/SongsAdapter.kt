@@ -13,7 +13,7 @@ class SongsAdapter: RecyclerView.Adapter<SongsAdapter.SongViewHolder>() {
 
     val callback = object : DiffUtil.ItemCallback<Song>() {
         override fun areItemsTheSame(oldItem: Song, newItem: Song): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem.primaryKey == newItem.primaryKey
         }
 
         override fun areContentsTheSame(oldItem: Song, newItem: Song): Boolean {

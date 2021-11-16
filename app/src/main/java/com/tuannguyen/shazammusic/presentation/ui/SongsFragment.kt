@@ -87,7 +87,6 @@ class SongsFragment: BaseFragment<FragmentSongsBinding, SongsViewModel>() {
             override fun onQueryTextChange(query: String?): Boolean {
                 MainScope().launch {
                     if (!query.isNullOrEmpty()) {
-
                         delay(2000)
                         viewModel.searchSong(query)
                         viewSearchSongResult()
